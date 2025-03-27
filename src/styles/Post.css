@@ -1,0 +1,15 @@
+.single-post{
+    text-align: start;
+    width: 70%;
+    margin: 0;
+}
+
+
+.post-title{
+    font-size: 40px;
+}
+.post-body{
+    font-size: 20px;
+    font-weight: normal;
+    font-style: italic;
+}

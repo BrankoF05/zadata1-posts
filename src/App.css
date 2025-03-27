@@ -5,4 +5,10 @@
   text-align: center;
 }
 
+.heading-title{
+  display:inline-block; 
+}
+.heading-title:hover{
+  cursor: pointer;
+}
   
