@@ -26,7 +26,7 @@ function PostsContainer() {
   }
   return (
     <>
-      <Input setInput={setInput} setFilter={setFilter} />
+      <Input setInput={setInput} setFilter={setFilter} filter={filter} />
       <Posts posts={posts} users={users} input={input} filter={filter} />
     </>
   );

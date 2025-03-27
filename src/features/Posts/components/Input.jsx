@@ -10,7 +10,7 @@ function Input(props) {
   }
   return (
     <div>
-      <input name={filter} onChange={filterInput} />
+      <input name={props.filter} onChange={filterInput} />
       <select onChange={filterChange}>
         <option value="title">Filter by name</option>
         <option value="body">Filter by description</option>
@@ -19,4 +19,4 @@ function Input(props) {
   );
 }
 
-export default Input();
+export default Input;
