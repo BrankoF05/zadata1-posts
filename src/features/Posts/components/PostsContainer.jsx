@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Posts from "./Posts";
 import { fetchPosts } from "../api/getPosts";
 import { fetchUsers } from "../../../api/getUsers";
+import Input from "./Input";
 
 function PostsContainer() {
   const [posts, setPosts] = useState([]);
@@ -16,14 +17,6 @@ function PostsContainer() {
     fetchUsers(setUsers, setLoading, setError);
   }, []);
 
-  function filterInput(e) {
-    setInput(e.target.value);
-  }
-
-  function filterChange(e) {
-    setFilter(e.target.value);
-  }
-
   if (loading) {
     <div>Loading...</div>;
   }
@@ -33,11 +26,7 @@ function PostsContainer() {
   }
   return (
     <>
-      <input name={filter} onChange={filterInput} />
-      <select onChange={filterChange}>
-        <option value="title">Filter by name</option>
-        <option value="body">Filter by description</option>
-      </select>
+      <Input setInput={setInput} setFilter={setFilter} />
       <Posts posts={posts} users={users} input={input} filter={filter} />
     </>
   );
