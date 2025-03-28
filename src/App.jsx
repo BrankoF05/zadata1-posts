@@ -1,6 +1,5 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./components/Home";
 import PostsContainer from "./features/Posts/components/PostsContainer";
 import PostContainer from "./features/Post/components/PostContainer";
 import { Button } from "antd";
