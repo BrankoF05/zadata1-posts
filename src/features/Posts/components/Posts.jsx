@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { upperCase } from "../../../functions/upperCase";
 import "../../../styles/Posts.css";
@@ -8,12 +8,16 @@ function Posts(props) {
   const input = props.input.toLowerCase();
   const filter = props.filter;
   const users = props.users;
+  const index = props.index;
+  const postPerPage = props.postPerPage;
+  const currentPage = props.currentPage;
 
   return (
     <>
       <div className="posts">
         {posts ? (
           posts
+            .slice(index, index + postPerPage)
             .filter((post) => post[filter].includes(input))
             .map((post) => {
               const user = users.find((user) => user.id === post.userId);
@@ -36,6 +40,13 @@ function Posts(props) {
           <h2>Nema pronađenih postova</h2>
         )}
       </div>
+      <button onClick={props.previousPage} disabled={currentPage <= 1}>
+        Previous
+      </button>
+      <p>{currentPage}</p>
+      <button onClick={props.nextPage} disabled={index >= posts.length}>
+        Next
+      </button>
     </>
   );
 }
