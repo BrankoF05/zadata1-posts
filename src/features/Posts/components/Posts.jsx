@@ -44,7 +44,7 @@ function Posts(props) {
         Previous
       </button>
       <p>{currentPage}</p>
-      <button onClick={props.nextPage} disabled={index >= posts.length}>
+      <button onClick={props.nextPage} disabled={index >= posts.length - 1}>
         Next
       </button>
     </>
